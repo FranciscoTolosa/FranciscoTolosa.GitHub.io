@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentHogar - Tu tranquilidad es nuestra prioridad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        :root {
+            --primary-color: #7C9A92;
+            --secondary-color: #E8D5C4;
+            --accent-color: #768A96;
+            --text-color: #454545;
+            --light-bg: #F9F5F2;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .before-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('images/1.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .after-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('images/2.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            border: 2px solid white;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .problems {
+            background-color: var(--light-bg);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .problems h2 {
+            color: var(--text-color);
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .problem-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .problem-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .steps {
+            padding: 4rem 2rem;
+            background-color: white;
+        }
+
+        .steps h2 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--light-bg);
+            border-radius: 15px;
+        }
+
+        .step-card h3 {
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-background">
+            <div class="before-image"></div>
+            <div class="after-image"></div>
+        </div>
+        <h1>Alquila sin preocupaciones</h1>
+        <p>Nos encargamos de todo mientras tú recibes tu renta mensual garantizada</p>
+        <div>
+            <a href="#" class="cta-button" id="alquilar-btn">Quiero alquilar mi vivienda</a>
+            <a href="#" class="cta-button">Conocer más</a>
+        </div>
+    </section>
+
+    <section class="problems">
+        <h2>¿Te identificas con alguna de estas situaciones?</h2>
+        <div class="problems-grid">
+            <div class="problem-card">
+                <i class="fas fa-euro-sign"></i>
+                <h3>Miedo a los impagos</h3>
+                <p>Te preocupa no recibir tu renta mensual a tiempo</p>
+            </div>
+            <div class="problem-card">
+                <i class="fas fa-house-damage"></i>
+                <h3>Desperfectos constantes</h3>
+                <p>Gastas demasiado en reparaciones y mantenimiento</p>
+            </div>
+            <div class="problem-card">
+                <i class="fas fa-users-slash"></i>
+                <h3>Inquilinos problemáticos</h3>
+                <p>Temes problemas de convivencia y quejas vecinales</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps">
+        <h2>¿Cómo funciona nuestro servicio?</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <i class="fas fa-search"></i>
+                <h3>Paso 1</h3>
+                <p>Analizamos y mejoramos tu propiedad sin coste</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-tasks"></i>
+                <h3>Paso 2</h3>
+                <p>Nos encargamos de toda la gestión</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-money-bill-wave"></i>
+                <h3>Paso 3</h3>
+                <p>Recibe tu renta garantizada cada mes</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Paso 4</h3>
+                <p>Protegemos tu inversión en todo momento</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const afterImage = document.querySelector('.after-image');
+        const alquilarBtn = document.getElementById('alquilar-btn');
+        const hero = document.querySelector('.hero');
+
+        hero.addEventListener('mousemove', (e) => {
+            const btn = alquilarBtn.getBoundingClientRect();
+            
+            // Calcular la distancia más cercana al borde del botón
+            const distX = Math.max(btn.left - e.clientX, 0, e.clientX - btn.right);
+            const distY = Math.max(btn.top - e.clientY, 0, e.clientY - btn.bottom);
+            const distance = Math.sqrt(distX * distX + distY * distY);
+            
+            // La distancia máxima para el efecto
+            const maxDistance = 200;
+            
+            // Calcular la opacidad basada en la distancia
+            let opacity = 1 - (Math.min(distance, maxDistance) / maxDistance);
+            opacity = Math.max(0, opacity); // Asegurar que no sea negativo
+            
+            afterImage.style.opacity = opacity;
+        });
+
+        // Resetear la opacidad cuando el ratón sale de la sección
+        hero.addEventListener('mouseleave', () => {
+            afterImage.style.opacity = 0;
+        });
+    </script>
+</body>
+</html>
